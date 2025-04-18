@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario con Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <nav class="bg-white shadow-md px-4 py-3">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="text-xl font-bold text-gray-800"><a href="index.html">Menú</a></div>
+      <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <ul id="menu" class="hidden md:flex space-x-6 text-gray-700 font-medium">
+        <li><a href="ejercicio1Boton.html" class="hover:text-blue-500">Ejercicio 1</a></li>
+        <li><a href="ejercicio2.tarjeta.html" class="hover:text-blue-500">Ejercicio 2</a></li>
+        <li><a href="ejercicio3layout.html" class="hover:text-blue-500">Ejercicio 3</a></li>
+        <li><a href="ejercicio4Formulario.html" class="hover:text-blue-500">Ejercicio 4</a></li>
+      </ul>
+    </div>
+
+    <ul id="mobile-menu" class="md:hidden hidden flex-col mt-2 space-y-2 text-gray-700 font-medium px-2">
+      <li><a href="ejercicio1Boton.html" class="block hover:text-blue-500">Ejercicio 1</a></li>
+      <li><a href="ejercicio2.tarjeta.html" class="block hover:text-blue-500">Ejercicio 2</a></li>
+      <li><a href="ejercicio3layout.html" class="block hover:text-blue-500">Ejercicio 3</a></li>
+      <li><a href="ejercicio4Formulario.html" class="block hover:text-blue-500">Ejercicio 4</a></li>
+    </ul>
+  </nav>
+
+  <div class="flex-grow flex items-center justify-center p-6">
+    <form class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md space-y-6">
+      <h2 class="text-2xl font-bold text-gray-800 text-center">Contáctanos</h2>
+
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Nombre</label>
+        <input type="text" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Tu nombre" />
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Correo electrónico</label>
+        <input type="email" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="tucorreo@ejemplo.com" />
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Mensaje</label>
+        <textarea class="w-full border border-gray-300 rounded-md px-4 py-2 h-28 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Escribe tu mensaje..."></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-black transition duration-300">
+        Enviar
+      </button>
+    </form>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>
